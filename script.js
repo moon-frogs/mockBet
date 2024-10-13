@@ -11,3 +11,9 @@ if (!cookies.includes('apiKey')) {
     console.log(document.cookie);
 }
 
+let credits = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('credit='))
+    ?.split('=')[1];
+
+console.log(`Credits: ${credits}`);
